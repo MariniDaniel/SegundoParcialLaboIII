@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Segundo Parcial</title>
+    <link type="text/css" rel="stylesheet" href="./css/styles.css">
+    <script type="text/javascript" src="./Vehiculo.js"> </script>
+    <script type="text/javascript" src="./Auto.js"> </script>
+    <script type="text/javascript" src="./Camioneta.js"> </script>
+    <script type="text/javascript" src="./Manejadora.js"> </script>
+</head>
+
+<body >
+
+    <h1>Segundo Parcial - Lab 3 - Marini Daniel</h1>
+    <hr>
+    <h3>Si desea ingresar un vehiculo nuevo, toque el siguiente boton:</h3>
+    <input type="button" class="botonAbrir"  id="btnAbrir" value="Alta Vehiculo" onclick="Autito.abrirGrilla();">
+    <br>                              
+    <h1> Filtros:</h1>
+    <hr>
+    <div id="fildsToShow">
+        <p>
+        <h2>Filtros :<small>Seleccionar que tipo de Vehiculo desea ver.</small></h2>
+        </p>
+    </div>
+    <label for="tipoAuto">¿Filtrado por Auto O Camioneta?</label>
+
+    <select  class="select-css" name="tipoVehiculos" id="filtroVehiculos">
+       
+        <option value="Auto">Auto</option>
+        <option value="Camioneta">Camioneta</option>
+    </select>
+
+    <hr>
+
+    <label for="promedioDePrecios"> Promedio de precio:</label>
+    <input type="text" id="promedioDePrecios" name="promedio" class="promedio">
+    <input type="button" id="btnPrecio"  class="botonPrecio" value="Calcular Promedio">
+
+   
+
+
+    <div class="contenedoraflex">
+
+        <div class="contenedor" id="contGrilla">
+
+            <input class="botonCerrar" type="button" id="btnCerrar" value="x" onclick="Autito.cerrarGrilla();">
+            <br>
+            
+            <h2 style="text-align: center;">Alta Nuevo Vehiculo</h2>
+            <hr>
+            <p> <h4>Se deben cargar los siguientes datos requeridos, Una vez cargados vera la tabla actualizada con todos los Vehiculos<br>Puede filtrar la misma seleccionando el filtro:</h3></p>
+            <hr>
+            <label for="Id">ID:</label>
+            <br>
+            <input type="text" id="Idehiculo" class="sinError" name="nombre" placeholder="El ID sera generado Luego." disabled=true>
+            <br>
+
+            <label for="marcaVehiculo">Marca:</label>
+            <br>
+            <input type="text" id="marcaVehiculo" maxlength="20" class="sinError" name="nombre" placeholder="Renault,Dodge,ETC...">
+            <br>
+
+            <label for="modeloVehiculo">Modelo:</label>
+            <br>
+            <input type="text" id="modeloVehiculo"  maxlength="20" class="sinError" name="nombre" placeholder="Clio 2,Journey,ETC...">
+            <br>
+            
+            <label for="precioVehiculo">Precio:</label>
+            <br>
+            <input type="number" id="precioVehiculo"  class="sinError" name="nombre" placeholder="Inserte Precio...">
+            <br>
+
+            
+
+            <label for="vehiculos">Tipo:</label>
+
+            <select  class="select-css" name="tiposVehiculo" id="vehiculos" >
+                <option value="Seleccinar" disabled selected >Seleccione un tipo:</option>
+                <option value="Auto">Auto</option>
+                <option value="Camioneta">Camioneta</option>
+            </select>
+            
+            <br>
+
+            <div id="contTipoCamioneta" hidden>
+
+                <label for="tipo">Tipo de Tracción:</label>
+
+                <select class="select-css" name="tipoCamioneta" id="tipoCamioneta">
+                    <option value="Es4X4">4x4</option>
+                    <option value="NoEs4x4">No es 4X4</option>
+                </select>
+                <br>
+            </div>
+
+            <div id="contTipoAuto" hidden>
+
+                <label for="tipo">Puertas:</label>
+
+                <input type="number" max="5" min="2" id="cantidadPuertas" class="sinError" name="puertas" placeholder="cantidad de puertas...">
+            </div>
+
+
+
+            <input class="botonEliminar" type="button" id="btnEliminar" value="Cerrar" onclick="Autito.cerrarGrilla();" >
+            <input class="botonModificar" type="button" id="btnGuardar" value="Agregar" onclick="Autito.agregar();">
+
+        </div>
+    </div>
+    <hr>
+        <div id="checks">
+            <input type="checkbox" name="colId" id="colId" checked>
+            <label for="colId">Id</label>
+            <input type="checkbox" name="colMarca" id="colMarca" checked>
+            <label for="colMarca">Marca</label>
+            <input type="checkbox" name="colModelo" id="colModelo" checked>
+            <label for="colModelo">Modelo</label>
+            <input type="checkbox" name="colVehiculo" id="colVehiculo" checked>
+            <label for="colVehiculo">Vehiculo</label>
+        </div>
+    <hr>
+    <table id="tabla" border="1">
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Vehiculo</th>
+                <th>Detalle</th>
+                <th>Accion</th>
+
+            </tr>
+        </thead>
+        <tbody id="tCuerpo">
+
+        </tbody>
+
+    </table>
+    <br>
+    <hr>
+    <nav><!--- Link De Linkedin-->
+        <h1 style="text-align: left ;">Redes Sociales</h1>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/daniel-julio-marini-79979a176/">Linkedin</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
